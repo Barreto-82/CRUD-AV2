@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Editar Produto{% else %}Adicionar Produto{% endif %}</title>
+</head>
+<body>
+    <h1 style="text-align: center;">
+        {% if form.instance.pk %}Editar Produto{% else %}Adicionar Produto{% endif %}
+    </h1>
+    <form method="post" style="width: 50%; margin: auto; padding: 20px; border: 1px solid #000;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div style="text-align: center;">
+            <button type="submit">Salvar</button>
+            <a href="{% url 'lista_produtos' %}">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>
+

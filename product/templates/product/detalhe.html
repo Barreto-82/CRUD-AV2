@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Produto</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Detalhes do Produto</h1>
+    <table border="1" style="width: 50%; margin: auto; text-align: left;">
+        <tr>
+            <th>Nome:</th>
+            <td>{{ produto.nome }}</td>
+        </tr>
+        <tr>
+            <th>Descrição:</th>
+            <td>{{ produto.descricao }}</td>
+        </tr>
+        <tr>
+            <th>Preço:</th>
+            <td>R$ {{ produto.preco }}</td>
+        </tr>
+        <tr>
+            <th>Data de Criação:</th>
+            <td>{{ produto.data_criacao }}</td>
+        </tr>
+        <tr>
+            <th>Última Modificação:</th>
+            <td>{{ produto.data_modificacao }}</td>
+        </tr>
+    </table>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'edita_produto' produto.pk %}">Editar</a> |
+        <a href="{% url 'deleta_produto' produto.pk %}">Deletar</a> |
+        <a href="{% url 'lista_produtos' %}">Voltar</a>
+    </div>
+</body>
+</html>
+
